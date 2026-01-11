@@ -13,6 +13,9 @@ import {
 } from 'lucide-react';
 import { Section, Theme } from '../types';
 
+import logo from '../assets/logo.png';
+import goodLuck from '../assets/goodLuck.png';
+
 interface NavbarProps {
     activeSection: Section;
     scrollToSection: (section: Section) => void;
@@ -51,7 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     }}
                 >
                     <img
-                        src="../assets/logo.png"
+                        src={logo}
                         alt="Darken Ae Logo"
                         className="w-12 h-12 rounded-xl shadow-lg shadow-primary/30 object-cover"
                     />
@@ -165,7 +168,7 @@ const Navbar: React.FC<NavbarProps> = ({
                         </button>
 
                         <p className="mt-8 text-gray-500 leading-relaxed flex items-center gap-1">
-                            <img className="w-8" src="../assets/goodLuck.png" alt="" />
+                            <img className="w-8" src={goodLuck} alt="" />
                             Good luck bro!
                         </p>
                     </div>
@@ -176,7 +179,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <div className="md:hidden bg-white rounded-2xl p-4 flex justify-between items-center shadow-sm">
                 <div className="flex items-center gap-2">
                     <img
-                        src="../assets/logo.png"
+                        src={logo}
                         alt="Darken Ae Logo"
                         className="w-12 h-12 rounded-xl shadow-lg shadow-primary/30 object-cover"
                     />
