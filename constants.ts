@@ -148,25 +148,20 @@ export const PROJECTS: Project[] = [
 export const TOOLS = [
     {
         id: 1,
-        title: 'Inertial Bounce',
+        title: 'Float on Y',
         category: 'Expression',
         description:
             'Add organic bounce to position, scale, or rotation with zero keyframes. Customizable decay and frequency.',
         price: 'Free',
-        previewUrl:
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
-        codeSnippet: `amp = .1; freq = 2.0; decay = 2.0;
-n = 0;
-if (numKeys > 0){
-  n = nearestKey(time).index;
-  if (key(n).time > time){n--;}
-}
-if (n == 0){ t = 0; }
-else{ t = time - key(n).time; }
-if (n > 0 && t < 1){
-  v = velocityAtTime(key(n).time - thisComp.frameDuration/10);
-  value + v*amp*Math.sin(freq*t*2*Math.PI)/Math.exp(decay*t);
-}else{value}`,
+        previewUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/chumoMan.mp4',
+        codeSnippet: `freq = 0.3;      // tebranish chastotasi (tezligi)
+amp = 20;      // tebranish amplitudasi (balandligi)
+decay = 0;     // so‘nish (0 bo‘lsa, to‘xtamaydi)
+
+x = value[0];
+y = value[1] + Math.sin(time * freq * 2 * Math.PI) * amp * Math.exp(-decay * time);
+[value[0], y]
+`,
     },
     {
         id: 2,
@@ -175,45 +170,40 @@ if (n > 0 && t < 1){
         description:
             'Professional CEP EXTENSION with ready-made text animations, effects, transitions and Curves.',
         price: '$49',
-        previewUrl:
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+        previewUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/chumoMan.mp4',
         codeSnippet: null,
     },
     {
         id: 3,
-        title: 'Auto-Crop',
-        category: 'Script',
+        title: 'Slider Controll',
+        category: 'Expression',
         description:
             'Automatically crops the composition duration to the selected layers or active work area.',
         price: 'Free',
-        previewUrl:
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
-        codeSnippet: `app.beginUndoGroup("Auto Crop");
-var comp = app.project.activeItem;
-if (comp && comp instanceof CompItem) {
-    comp.workAreaDuration = comp.duration;
+        previewUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/chumoMan.mp4',
+        codeSnippet: `num = effect("Slider Control")("Slider").value.toFixed(0);
+
+function addCommas(x) {   
+   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-app.endUndoGroup();`,
+
+"$" + addCommas(num);
+`,
     },
     {
         id: 4,
-        title: 'LoopMaster',
+        title: 'Number Counter',
         category: 'Expression',
         description:
             'The ultimate loop expression that handles cycle, pingpong, and offset with a single checkbox controller.',
         price: '$5',
-        previewUrl:
-            'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
-        codeSnippet: `// Smart Loop v2.0
-var loopType = "cycle";
-try {
-    if (effect("PingPong?")("Checkbox") == 1) {
-        loopType = "pingpong";
-    }
-    loopOut(loopType);
-} catch(err) {
-    loopOut("cycle");
-}`,
+        previewUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/chumoMan.mp4',
+        codeSnippet: `num = "$ "+effect("Angle Control")("Angle").value.toFixed(2)+"%";
+function addCommas(x) {
+return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+addCommas(num)
+`,
     },
 ];
 

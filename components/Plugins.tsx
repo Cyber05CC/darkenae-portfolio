@@ -35,7 +35,7 @@ const Plugins: React.FC<PluginsProps> = ({ onOpenPurchase }) => {
 
             {/* Featured Plugin - Large Card */}
             {mainPlugin && (
-                <div className="mb-8 group relative overflow-hidden rounded-[32px] bg-[#111827] text-white p-8 md:p-12 shadow-2xl shadow-indigo-900/20 transition-all duration-500 border border-gray-800">
+                <div className="mb-8 group relative overflow-hidden rounded-[32px] bg-[#000000] text-white p-8 md:p-12 shadow-2xl shadow-indigo-900/20 transition-all duration-500 border border-gray-800">
                     {/* Background Decor */}
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary/30 to-transparent rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none opacity-50"></div>
                     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-900/20 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
