@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Section } from '../types';
 import { PROJECTS } from '../constants';
@@ -21,9 +21,9 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
     const velocity = useRef(0);
     const clickPreventRef = useRef(false);
 
-    // Create 12 sets of projects for robust infinite scrolling with smaller cards
-    // This ensures even 4K screens have enough content buffer
-    const allProjects = Array(12).fill(PROJECTS).flat();
+    // Robust infinite scrolling with smaller cards
+    // Memoized to prevent recreation on every render
+    const allProjects = useMemo(() => Array(12).fill(PROJECTS).flat(), []);
 
     useEffect(() => {
         let animationFrameId: number;
@@ -44,7 +44,6 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             // Physics Loop
             if (!isDraggingRef.current) {
                 // Friction/Decay: Smoothly return to base speed (0.5)
-                // Increased smoothing (0.95 -> 0.98) creates a more "fluid" drift
                 currentSpeed.current = currentSpeed.current * 0.98 + 0.5 * 0.02;
                 scrollPos.current += currentSpeed.current;
                 container.scrollLeft = scrollPos.current;
@@ -74,8 +73,9 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
 
         animationFrameId = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(animationFrameId);
-    }, []);
+    }, [allProjects]);
 
+    // --- MOUSE HANDLERS ---
     const handleMouseDown = (e: React.MouseEvent) => {
         isDraggingRef.current = true;
         setIsDragging(true);
@@ -119,16 +119,67 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
 
     const handleMouseUp = () => {
         if (!isDraggingRef.current) return;
-
         isDraggingRef.current = false;
         setIsDragging(false);
-
         // Apply momentum on release
         currentSpeed.current = velocity.current;
     };
 
     const handleMouseLeave = () => {
         if (isDraggingRef.current) handleMouseUp();
+    };
+
+    // --- TOUCH HANDLERS (Mobile) ---
+    const handleTouchStart = (e: React.TouchEvent) => {
+        isDraggingRef.current = true;
+        setIsDragging(true);
+        clickPreventRef.current = false;
+
+        // Use the first touch point
+        const touch = e.touches[0];
+        startX.current = touch.pageX;
+        lastClientX.current = touch.pageX;
+        lastTimestamp.current = Date.now();
+
+        velocity.current = 0;
+        currentSpeed.current = 0;
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (!isDraggingRef.current) return;
+
+        const touch = e.touches[0];
+        const x = touch.pageX;
+        const dx = x - lastClientX.current;
+
+        // Check if dragging significantly to prevent accidental clicks
+        if (Math.abs(x - startX.current) > 5) {
+            clickPreventRef.current = true;
+        }
+
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollLeft -= dx;
+            scrollPos.current = scrollContainerRef.current.scrollLeft;
+        }
+
+        // Calculate Velocity
+        const now = Date.now();
+        const dt = now - lastTimestamp.current;
+        if (dt > 0) {
+            const instantVelocity = (-dx / dt) * 16;
+            velocity.current = instantVelocity * 0.6 + velocity.current * 0.4;
+        }
+
+        lastClientX.current = x;
+        lastTimestamp.current = now;
+    };
+
+    const handleTouchEnd = () => {
+        if (!isDraggingRef.current) return;
+        isDraggingRef.current = false;
+        setIsDragging(false);
+        // Apply momentum
+        currentSpeed.current = velocity.current;
     };
 
     const handleCardClick = () => {
@@ -149,7 +200,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             <div className="relative z-10 w-full flex flex-col items-start text-left gap-4 pt-2 md:pt-4 px-2 md:px-4">
                 {/* Text Content */}
                 <div className="w-full">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-black text-sm font-semibold mb-4  w-fit">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-black text-sm font-semibold mb-4 border border-indigo-100 w-fit">
                         <span>Hello 🖐🏻 I'm darken, and here's...</span>
                     </div>
 
@@ -166,7 +217,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
                     <div className="w-full mb-2">
                         <button
                             onClick={() => scrollToSection(Section.WORK)}
-                            className="w-full px-8 py-3.5 bg-black text-white rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-500 ease-out flex items-center justify-center gap-2"
+                            className="w-full px-8 py-3.5 bg-black text-white rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-500 ease-out flex items-center justify-center gap-2 active:scale-95 transform"
                         >
                             Check my work
                         </button>
@@ -178,24 +229,28 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             <div className="relative z-10 w-full mt-4">
                 <div
                     ref={scrollContainerRef}
-                    className="flex gap-3 overflow-x-hidden px-2 md:px-4 pb-2 select-none cursor-default"
+                    className="flex gap-3 overflow-x-hidden px-2 md:px-4 pb-2 select-none touch-pan-y"
                     onMouseDown={handleMouseDown}
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
                     onMouseLeave={handleMouseLeave}
-                    style={{ scrollbarWidth: 'none' }}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    style={{ scrollbarWidth: 'none', cursor: isDragging ? 'grabbing' : 'grab' }}
                 >
                     {allProjects.map((project, index) => (
                         <div
                             key={`${project.id}-${index}`}
                             onClick={handleCardClick}
-                            className="min-w-[140px] w-[140px] md:min-w-[180px] md:w-[180px] flex-shrink-0 bg-white p-2 rounded-2xl border border-gray-100 shadow-sm pointer-events-auto transition-transform duration-500 ease-out"
+                            className="min-w-[140px] w-[140px] md:min-w-[180px] md:w-[180px] flex-shrink-0 bg-white p-2 rounded-2xl border border-gray-100 shadow-sm pointer-events-auto transition-transform duration-500 ease-out active:scale-95"
                         >
                             <div className="aspect-[9/16] rounded-xl overflow-hidden bg-gray-100 relative pointer-events-none">
                                 <img
                                     src={project.thumbnail}
                                     alt={project.title}
                                     className="w-full h-full object-cover"
+                                    loading="lazy"
                                 />
                             </div>
                         </div>

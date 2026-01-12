@@ -25,7 +25,7 @@ const Plugins: React.FC<PluginsProps> = ({ onOpenPurchase }) => {
         >
             <div className="mb-10">
                 <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-                    Plugin - Expression
+                    Expression <span className="text-primary">& Plugin</span>
                 </h2>
                 <p className="text-gray-500 text-lg max-w-2xl">
                     A selection of plugins, scripts, and expressions I've built to speed up my
@@ -60,7 +60,7 @@ const Plugins: React.FC<PluginsProps> = ({ onOpenPurchase }) => {
                             <div className="flex flex-wrap items-center gap-4 pt-2">
                                 <button
                                     onClick={onOpenPurchase}
-                                    className="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-indigo-500 hover:shadow-lg hover:shadow-indigo-500/25 transition-all duration-500 ease-out flex items-center gap-2 transform active:scale-95"
+                                    className="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-indigo-500 hover:shadow-lg hover:shadow-indigo-500/25 transition-colors duration-500 ease-out flex items-center gap-2 transform active:scale-95 transition-transform"
                                 >
                                     <ShoppingBag size={20} />
                                     Get {mainPlugin.title} — {mainPlugin.price}
@@ -94,7 +94,7 @@ const Plugins: React.FC<PluginsProps> = ({ onOpenPurchase }) => {
                 {otherTools.map((tool) => (
                     <div
                         key={tool.id}
-                        className="group bg-gray-50 rounded-[24px] p-6 border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-500 ease-out flex flex-col h-full"
+                        className="group bg-gray-50 rounded-[24px] p-6 border border-gray-100 hover:bg-white hover:shadow-xl transition-shadow duration-500 ease-out flex flex-col h-full"
                     >
                         {/* Header */}
                         <div className="flex justify-between items-start mb-6">
@@ -149,7 +149,7 @@ const Plugins: React.FC<PluginsProps> = ({ onOpenPurchase }) => {
                                     </pre>
                                     <button
                                         onClick={() => handleCopy(tool.codeSnippet!, tool.id)}
-                                        className="absolute top-2 right-2 p-1.5 bg-white/10 hover:bg-white/20 backdrop-blur rounded-md text-white transition-all duration-500 ease-out opacity-0 group-hover/code:opacity-100 z-20"
+                                        className="absolute top-2 right-2 p-1.5 bg-white/10 hover:bg-white/20 backdrop-blur rounded-md text-white transition-opacity duration-500 ease-out opacity-0 group-hover/code:opacity-100 z-20"
                                         title="Copy Code"
                                     >
                                         {copiedId === tool.id ? (

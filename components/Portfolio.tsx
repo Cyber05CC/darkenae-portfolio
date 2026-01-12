@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Instagram, Play } from 'lucide-react';
+import { ExternalLink, Play } from 'lucide-react';
 import { PROJECTS } from '../constants';
 
 const Portfolio: React.FC = () => {
@@ -24,7 +24,7 @@ const Portfolio: React.FC = () => {
                     return (
                         <div
                             key={project.id}
-                            className="bg-white rounded-[32px] p-3 shadow-sm border border-white/50 hover:shadow-xl transition-all duration-500 ease-out group flex flex-col h-full hover:-translate-y-1"
+                            className="bg-white rounded-[32px] p-3 shadow-sm border border-white/50 transition-shadow duration-500 ease-out group flex flex-col h-full hover:-translate-y-1 transform transition-transform will-change-transform"
                         >
                             {/* Media Container */}
                             <div
@@ -45,7 +45,8 @@ const Portfolio: React.FC = () => {
                                         <img
                                             src={project.thumbnail}
                                             alt={project.title}
-                                            className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-102"
+                                            className="w-full h-full object-cover"
+                                            loading="lazy"
                                         />
                                         <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500 ease-out"></div>
 
@@ -53,12 +54,12 @@ const Portfolio: React.FC = () => {
                                             {project.category}
                                         </div>
 
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out scale-90 group-hover:scale-100">
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out scale-90 group-hover:scale-100 transform transition-transform">
                                             <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/50 shadow-lg">
                                                 <Play
                                                     size={28}
                                                     fill="currentColor"
-                                                    className="ml-1 cursor-pointer"
+                                                    className="ml-1"
                                                 />
                                             </div>
                                         </div>
@@ -69,15 +70,15 @@ const Portfolio: React.FC = () => {
                             {/* Content */}
                             <div className="px-2 pb-2 flex-1 flex flex-col">
                                 <div className="flex justify-between items-start gap-4 mb-2">
-                                    <h3 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-primary transition-colors duration-300 ease-out">
+                                    <h3 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-primary transition-colors duration-500 ease-out">
                                         {project.title}
                                     </h3>
                                     <a
                                         href="https://www.instagram.com/darken_ae?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                        className="p-2 bg-gray-50 rounded-full text-gray-400 hover:text-primary hover:bg-indigo-50 transition-all duration-300 ease-out"
-                                        target="_blank"
+                                        className="p-2 bg-gray-50 rounded-full text-gray-400 hover:text-primary hover:bg-indigo-50 transition-colors duration-500 ease-out"
+                                        target="blank"
                                     >
-                                        <Instagram size={18} />
+                                        <ExternalLink size={18} />
                                     </a>
                                 </div>
                                 <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">

@@ -91,7 +91,7 @@ const App: React.FC = () => {
                 {/* Feed Container - Slides Left when Purchase Mode is Active */}
                 <div
                     ref={mainRef}
-                    className={`absolute inset-0 p-3 md:pl-0 overflow-y-auto scroll-smooth transition-all duration-500 ease-in-out transform ${
+                    className={`absolute inset-0 p-3 md:pl-0 overflow-y-auto scroll-smooth transition-all duration-500 ease-in-out transform will-change-transform ${
                         isPurchaseMode
                             ? 'opacity-0 -translate-x-10 pointer-events-none'
                             : 'opacity-100 translate-x-0'
@@ -104,14 +104,14 @@ const App: React.FC = () => {
                         <About />
                         <Contact />
                         <footer className="py-8 text-center text-gray-400 text-sm">
-                            <p>&copy; {new Date().getFullYear()} darken_ae</p>
+                            <p>&copy; {new Date().getFullYear()} Darken Ae. Built with AI.</p>
                         </footer>
                     </div>
                 </div>
 
                 {/* Purchase Window Container - Slides In From Right */}
                 <div
-                    className={`absolute inset-0 p-3 md:pl-0 overflow-y-auto transition-all duration-500 ease-in-out transform ${
+                    className={`absolute inset-0 p-3 md:pl-0 overflow-y-auto transition-all duration-500 ease-in-out transform will-change-transform ${
                         isPurchaseMode
                             ? 'opacity-100 translate-x-0'
                             : 'opacity-0 translate-x-10 pointer-events-none'
