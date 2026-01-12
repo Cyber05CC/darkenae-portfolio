@@ -4,7 +4,7 @@ import { SYSTEM_INSTRUCTION } from '../constants';
 let chatSession: Chat | null = null;
 
 const getAIClient = (): GoogleGenAI => {
-    const apiKey = process.env.API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
         throw new Error('API_KEY environment variable is missing');
     }
