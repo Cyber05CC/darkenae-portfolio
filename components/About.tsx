@@ -1,6 +1,13 @@
 import React from 'react';
 import { Layers, Aperture, Film, Sparkles, Cpu, Code2 } from 'lucide-react';
 
+import aeLogo from '../assets/aeLogo.png';
+import ppLogo from '../assets/ppLogo.png';
+import davinciLogo from '../assets/davinciLogo.png';
+import veoLogo from '../assets/veoLogo.jpg';
+import bananaLogo from '../assets/bananaLogo.png';
+import vsLogo from '../assets/vsLogo.png';
+
 const About: React.FC = () => {
     return (
         <section
@@ -64,8 +71,8 @@ const About: React.FC = () => {
                         {/* Item 1 */}
                         <div className="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-500 ease-out group hover:-translate-y-1">
                             <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-primary group-hover:scale-100 transition-transform duration-500 ease-out flex-shrink-0">
+                                <img src={aeLogo} alt="aeLogo" className="" />
                                 <Layers size={24} />
-                                <img src="../assets/aeLogo.png" alt="" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-gray-900">After Effects</h4>
@@ -78,8 +85,8 @@ const About: React.FC = () => {
                         {/* Item 2 */}
                         <div className="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-500 ease-out group hover:-translate-y-1">
                             <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-primary group-hover:scale-100 transition-transform duration-500 ease-out flex-shrink-0">
+                                <img src={ppLogo} alt="ppLogo" />
                                 <Film size={24} />
-                                <img src="../assets/ppLogo.png" alt="" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Premiere Pro</h4>
@@ -90,8 +97,8 @@ const About: React.FC = () => {
                         {/* Item 3 */}
                         <div className="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-500 ease-out group hover:-translate-y-1">
                             <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-primary group-hover:scale-100 transition-transform duration-500 ease-out flex-shrink-0">
+                                <img src={davinciLogo} alt="davinciLogo" />
                                 <Sparkles size={24} />
-                                <img src="../assets/davinciLogo.png" alt="" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-gray-900">DaVinci Resolve</h4>
@@ -102,8 +109,8 @@ const About: React.FC = () => {
                         {/* Item 4 */}
                         <div className="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-500 ease-out group hover:-translate-y-1">
                             <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-primary group-hover:scale-100 transition-transform duration-500 ease-out flex-shrink-0">
+                                <img src={veoLogo} alt="veoLogo" />
                                 <Code2 size={24} />
-                                <img src="../assets/veoLogo.jpg" alt="" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Veo 3.1</h4>
@@ -114,8 +121,8 @@ const About: React.FC = () => {
                         {/* Item 5 */}
                         <div className="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-500 ease-out group hover:-translate-y-1">
                             <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-primary group-hover:scale-100 transition-transform duration-500 ease-out flex-shrink-0">
+                                <img src={bananaLogo} alt="bananaLogo" />
                                 <Cpu size={24} />
-                                <img src="../assets/bananaLogo.png" alt="" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Nano Banana</h4>
@@ -126,8 +133,8 @@ const About: React.FC = () => {
                         {/* Item 6 */}
                         <div className="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-500 ease-out group hover:-translate-y-1">
                             <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-primary group-hover:scale-100 transition-transform duration-500 ease-out flex-shrink-0">
+                                <img src={vsLogo} alt="vsLogo" />
                                 <Aperture size={24} />
-                                <img src="../assets/vsLogo.png" alt="" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-gray-900">Vs Code</h4>
