@@ -1,25 +1,6 @@
 import { Project } from './types';
 
 /* =======================
-   VIDEO IMPORTS (o‘zgarmadi)
-======================= */
-import StudioPr from './assets/works/VIDEO/studioPrV.mp4';
-import muhiddinTour from './assets/works/VIDEO/muhiddinAka.mp4';
-import sardorAka from './assets/works/VIDEO/sardorAka.mp4';
-import expertDoktor from './assets/works/VIDEO/expertDoktor.mp4';
-import proxMedia from './assets/works/VIDEO/proxMedia.mp4';
-import maxsumaOpa from './assets/works/VIDEO/maxsumaOpa.mp4';
-import alisherAka from './assets/works/VIDEO/alisherAka.mp4';
-import shaxRep from './assets/works/VIDEO/shaxRep.mp4';
-import GPT_JIGAR from './assets/works/VIDEO/GPT_JIGAR.mp4';
-import farruhAka from './assets/works/VIDEO/farruhAka.mp4';
-import porsche911 from './assets/works/VIDEO/porsche911.mp4';
-import makimaOpa from './assets/works/VIDEO/makimaOpa.mp4';
-import himenoOpa from './assets/works/VIDEO/Dead_Himeno.mp4';
-import sadeRitser from './assets/works/VIDEO/sadeRitser.mp4';
-import porsche from './assets/works/VIDEO/porsche.mp4';
-
-/* =======================
    IMAGE IMPORTS (MUHIM)
 ======================= */
 import studioPrImg from './assets/works/IMG/studioPr.png';
@@ -47,7 +28,7 @@ export const PROJECTS: Project[] = [
         title: 'studiopr.uz',
         category: 'Motion',
         thumbnail: studioPrImg,
-        videoUrl: StudioPr,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/studioPrV.mp4',
         description: 'Motion Edit Made in After Effects for the studiopr.uz Instagram page.',
     },
     {
@@ -55,7 +36,7 @@ export const PROJECTS: Project[] = [
         title: 'muhiddin_otkurov',
         category: 'Motion',
         thumbnail: muhiddinImg,
-        videoUrl: muhiddinTour,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/muhiddinAka.mp4',
         description: 'Motion Edit Made in After Effects for the Instagram page muhiddin_otkurov.',
     },
     {
@@ -63,7 +44,7 @@ export const PROJECTS: Project[] = [
         title: 'Sardor Xudoyberdiyev',
         category: 'Motion',
         thumbnail: sardorImg,
-        videoUrl: sardorAka,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/sardorAka.mp4',
         description: 'Motion Edit Made in After Effects for Sardor Khudoyberdiev Instagram Page.',
     },
     {
@@ -71,7 +52,7 @@ export const PROJECTS: Project[] = [
         title: 'Personal brand',
         category: 'Motion',
         thumbnail: expertImg,
-        videoUrl: expertDoktor,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/expertDoktor.mp4',
         description: 'Motion Edit Made in After Effects for a Medical Expert Instagram Page.',
     },
     {
@@ -79,7 +60,7 @@ export const PROJECTS: Project[] = [
         title: 'maxsuma_ashirmetova',
         category: 'Motion',
         thumbnail: maxsumaImg,
-        videoUrl: maxsumaOpa,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/maxsumaOpa.mp4',
         description: 'Motion Edit Made in After Effects for Maxsuma Ashirmetova Instagram Page.',
     },
     {
@@ -87,7 +68,7 @@ export const PROJECTS: Project[] = [
         title: 'proxmedia.uz',
         category: 'Motion',
         thumbnail: proxMediaImg,
-        videoUrl: proxMedia,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/proxMedia.mp4',
         description: 'Motion Edit Made in After Effects for proxmedia.uz Instagram Page.',
     },
     {
@@ -95,7 +76,7 @@ export const PROJECTS: Project[] = [
         title: 'alisherturapovv',
         category: 'Motion',
         thumbnail: alisherImg,
-        videoUrl: alisherAka,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/alisherAka.mp4',
         description: 'Motion Edit Made in After Effects for alisherturapovv Instagram Page.',
     },
     {
@@ -103,7 +84,7 @@ export const PROJECTS: Project[] = [
         title: 'shaxriyor_rep_official',
         category: 'Flayer',
         thumbnail: shaxriyorImg,
-        videoUrl: shaxRep,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/shaxRep.mp4',
         description: 'Motion Edit Made in After Effects for shaxriyor_rep_official Instagram Page.',
     },
     {
@@ -111,7 +92,7 @@ export const PROJECTS: Project[] = [
         title: 'farrukhsaliev_',
         category: 'Motion',
         thumbnail: farruhImg,
-        videoUrl: farruhAka,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/farruhAka.mp4',
         description: 'Motion Edit Made in After Effects for farrukhsaliev_ Instagram Page.',
     },
     {
@@ -119,7 +100,7 @@ export const PROJECTS: Project[] = [
         title: 'Open Ai',
         category: 'Motion',
         thumbnail: chatGptImg,
-        videoUrl: GPT_JIGAR,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/GPT_JIGAR.mp4',
         description: 'Motion Edit Made in After Effects for ChatGPT.',
     },
     {
@@ -127,7 +108,7 @@ export const PROJECTS: Project[] = [
         title: 'Porsche 911 GT3 RS',
         category: 'Ai Video',
         thumbnail: porsche911Img,
-        videoUrl: porsche911,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/porsche911.mp4',
         description: 'AI video generation using Nano Banana and Google Veo 3.1.',
     },
     {
@@ -135,7 +116,7 @@ export const PROJECTS: Project[] = [
         title: 'Chainsaw Man "Makima"',
         category: 'Ai Video',
         thumbnail: makimaImg,
-        videoUrl: makimaOpa,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/makimaOpa.mp4',
         description: '2D MAPPA style AI video generation made using Nano Banana and Sora 2.',
     },
     {
@@ -143,7 +124,7 @@ export const PROJECTS: Project[] = [
         title: 'Chainsaw Man "Himeno"',
         category: 'Ai Video',
         thumbnail: himenoImg,
-        videoUrl: himenoOpa,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/Dead_Himeno.mp4',
         description: '2D MAPPA style AI video generation made using Nano Banana and Sora 2.',
     },
     {
@@ -151,7 +132,7 @@ export const PROJECTS: Project[] = [
         title: 'Female Knight in Battle',
         category: 'Ai Video',
         thumbnail: ritserImg,
-        videoUrl: sadeRitser,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/sadeRitser.mp4',
         description: 'AI video generation using Nano Banana and Google Veo 3.1.',
     },
     {
@@ -159,7 +140,7 @@ export const PROJECTS: Project[] = [
         title: 'Porsche 911 GT3 RS',
         category: 'Ai Video',
         thumbnail: porscheImg,
-        videoUrl: porsche,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/porsche.mp4',
         description: 'AI video generation using Nano Banana and Google Veo 3.1.',
     },
 ];
