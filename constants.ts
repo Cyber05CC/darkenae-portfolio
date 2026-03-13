@@ -3,6 +3,7 @@ import { Project } from './types';
 /* =======================
    IMAGE IMPORTS (MUHIM)
 ======================= */
+import jahongirMTH from './assets/works/IMG/jahongirMTH.png';
 import studioPrImg from './assets/works/IMG/studioPr.png';
 import muhiddinImg from './assets/works/IMG/muhiddinTour.png';
 import sardorImg from './assets/works/IMG/sardorAka.png';
@@ -25,6 +26,15 @@ import porscheImg from './assets/works/IMG/porsche.png';
 export const PROJECTS: Project[] = [
     {
         id: 1,
+        title: 'Jahongir-Math',
+        category: 'Motion',
+        thumbnail: jahongirMTH,
+        videoUrl: 'https://pub-972a5b30c6a84eef899044660db14fbb.r2.dev/jahongirMATH.mp4',
+        description:
+            'Motion Edit Made in After Effects for the jakhongir_makhamatkarimov Instagram page.',
+    },
+    {
+        id: 2,
         title: 'studiopr.uz',
         category: 'Motion',
         thumbnail: studioPrImg,
@@ -32,7 +42,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for the studiopr.uz Instagram page.',
     },
     {
-        id: 2,
+        id: 3,
         title: 'muhiddin_otkurov',
         category: 'Motion',
         thumbnail: muhiddinImg,
@@ -40,7 +50,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for the Instagram page muhiddin_otkurov.',
     },
     {
-        id: 3,
+        id: 4,
         title: 'Sardor Xudoyberdiyev',
         category: 'Motion',
         thumbnail: sardorImg,
@@ -48,7 +58,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for Sardor Khudoyberdiev Instagram Page.',
     },
     {
-        id: 4,
+        id: 5,
         title: 'Personal brand',
         category: 'Motion',
         thumbnail: expertImg,
@@ -56,7 +66,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for a Medical Expert Instagram Page.',
     },
     {
-        id: 5,
+        id: 6,
         title: 'maxsuma_ashirmetova',
         category: 'Motion',
         thumbnail: maxsumaImg,
@@ -64,7 +74,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for Maxsuma Ashirmetova Instagram Page.',
     },
     {
-        id: 6,
+        id: 7,
         title: 'proxmedia.uz',
         category: 'Motion',
         thumbnail: proxMediaImg,
@@ -72,7 +82,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for proxmedia.uz Instagram Page.',
     },
     {
-        id: 7,
+        id: 8,
         title: 'alisherturapovv',
         category: 'Motion',
         thumbnail: alisherImg,
@@ -80,7 +90,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for alisherturapovv Instagram Page.',
     },
     {
-        id: 8,
+        id: 9,
         title: 'shaxriyor_rep_official',
         category: 'Flayer',
         thumbnail: shaxriyorImg,
@@ -88,7 +98,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for shaxriyor_rep_official Instagram Page.',
     },
     {
-        id: 9,
+        id: 10,
         title: 'farrukhsaliev_',
         category: 'Motion',
         thumbnail: farruhImg,
@@ -96,7 +106,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for farrukhsaliev_ Instagram Page.',
     },
     {
-        id: 10,
+        id: 11,
         title: 'Open Ai',
         category: 'Motion',
         thumbnail: chatGptImg,
@@ -104,7 +114,7 @@ export const PROJECTS: Project[] = [
         description: 'Motion Edit Made in After Effects for ChatGPT.',
     },
     {
-        id: 11,
+        id: 12,
         title: 'Porsche 911 GT3 RS',
         category: 'Ai Video',
         thumbnail: porsche911Img,
@@ -112,7 +122,7 @@ export const PROJECTS: Project[] = [
         description: 'AI video generation using Nano Banana and Google Veo 3.1.',
     },
     {
-        id: 12,
+        id: 13,
         title: 'Chainsaw Man "Makima"',
         category: 'Ai Video',
         thumbnail: makimaImg,
@@ -120,7 +130,7 @@ export const PROJECTS: Project[] = [
         description: '2D MAPPA style AI video generation made using Nano Banana and Sora 2.',
     },
     {
-        id: 13,
+        id: 14,
         title: 'Chainsaw Man "Himeno"',
         category: 'Ai Video',
         thumbnail: himenoImg,
@@ -128,7 +138,7 @@ export const PROJECTS: Project[] = [
         description: '2D MAPPA style AI video generation made using Nano Banana and Sora 2.',
     },
     {
-        id: 14,
+        id: 15,
         title: 'Female Knight in Battle',
         category: 'Ai Video',
         thumbnail: ritserImg,
@@ -136,7 +146,7 @@ export const PROJECTS: Project[] = [
         description: 'AI video generation using Nano Banana and Google Veo 3.1.',
     },
     {
-        id: 15,
+        id: 16,
         title: 'Porsche 911 GT3 RS',
         category: 'Ai Video',
         thumbnail: porscheImg,

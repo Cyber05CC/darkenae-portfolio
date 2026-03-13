@@ -56,10 +56,10 @@ const Navbar: React.FC<NavbarProps> = ({
                     <img
                         src={logo}
                         alt="Darken Ae Logo"
-                        className="w-12 h-12 rounded-xl shadow-lg shadow-primary/30 object-cover"
+                        className="w-14 h-14 rounded-xl shadow-md shadow-primary/30 object-cover"
                     />
                     <div>
-                        <h1 className="text-xl font-bold tracking-tight text-gray-900 leading-none">
+                        <h1 className="text-xl font-medium tracking-tight text-gray-900 leading-none">
                             Arslon Boysinov
                         </h1>
                         <span className="text-xs text-gray-400 font-medium">@darken_ae</span>
