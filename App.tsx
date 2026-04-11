@@ -104,7 +104,7 @@ const App: React.FC = () => {
                         <About />
                         <Contact />
                         <footer className="py-8 text-center text-gray-400 text-sm">
-                            <p>&copy; {new Date().getFullYear()} Darken Ae. Built with AI.</p>
+                            <p>&copy; {new Date().getFullYear()} darken Ae</p>
                         </footer>
                     </div>
                 </div>
